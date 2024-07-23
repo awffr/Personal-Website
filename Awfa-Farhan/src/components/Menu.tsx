@@ -11,11 +11,11 @@ function Menu() {
   let mouseX = useMotionValue(Infinity);
 
   return (
-    <div className="fixed bottom-2 left-1/2 transform -translate-x-1/2 flex justify-center">
+    <div className="fixed bottom-6 left-1/2 transform -translate-x-1/2 flex justify-center w-full">
       <motion.div
         onMouseMove={(e) => mouseX.set(e.pageX)}
         onMouseLeave={() => mouseX.set(Infinity)}
-        className="mx-auto flex h-16 items-end gap-4 rounded-2xl bg-gray-700 px-4 pb-3"
+        className="mx-auto flex h-14 items-end gap-4 rounded-xl bg-white/20 shadow-lg ring-1 ring-black/5 px-3 pb-2 backdrop-blur-md"
       >
         {[...Array(8).keys()].map((i) => (
           <AppIcon mouseX={mouseX} key={i} />
@@ -41,7 +41,7 @@ function AppIcon({ mouseX }: { mouseX: MotionValue }) {
     <motion.div
       ref={ref}
       style={{ width }}
-      className="aspect-square w-10 rounded-full bg-gray-400"
+      className="aspect-square w-10 rounded-xl bg-white/20 shadow-md ring-1 ring-black/5 backdrop-blur-md"
     />
   );
 }
