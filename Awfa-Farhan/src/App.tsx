@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import './App.css'
+import Menu from '../src/components/Menu';
 
 function App() {
   const [count, setCount] = useState(0)
@@ -7,7 +8,7 @@ function App() {
   return (
     <>
       <div>
-       <p>Hi!</p>
+       <Menu/>
       </div>
     </>
   )
