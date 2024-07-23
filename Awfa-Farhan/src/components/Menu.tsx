@@ -17,7 +17,7 @@ function Menu() {
         onMouseLeave={() => mouseX.set(Infinity)}
         className="mx-auto flex h-14 items-end gap-4 rounded-xl bg-white/20 shadow-lg ring-1 ring-black/5 px-3 pb-2 backdrop-blur-md"
       >
-        {[...Array(8).keys()].map((i) => (
+        {[...Array(6).keys()].map((i) => (
           <AppIcon mouseX={mouseX} key={i} />
         ))}
       </motion.div>
@@ -34,8 +34,8 @@ function AppIcon({ mouseX }: { mouseX: MotionValue }) {
     return val - bounds.x - bounds.width / 2;
   });
 
-  let widthSync = useTransform(distance, [-150, 0, 150], [40, 100, 40]);
-  let width = useSpring(widthSync, { mass: 0.1, stiffness: 150, damping: 12 });
+  let widthSync = useTransform(distance, [-100, 0, 100], [40, 80, 40]);
+  let width = useSpring(widthSync, { mass: 0.1, stiffness: 100, damping: 12 });
 
   return (
     <motion.div
