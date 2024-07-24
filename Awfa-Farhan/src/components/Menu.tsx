@@ -7,22 +7,24 @@ import {
 } from "framer-motion";
 import { useRef } from "react";
 import { AiFillHome } from "react-icons/ai";
-import { IoBriefcase, IoLogoGithub, IoRocketSharp, IoStatsChart, IoDocumentSharp } from "react-icons/io5";
+import { IoBriefcase, IoLogoGithub, IoRocketSharp, IoDocument } from "react-icons/io5";
 import { BsTelephoneFill } from "react-icons/bs";
-
+import { BiStats } from "react-icons/bi";
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip"; 
+import { useNavigate } from "react-router-dom"; 
 
 type IconProps = {
   className?: string;
 };
 
-function AppIcon({ mouseX, Icon, label }: { mouseX: MotionValue, Icon: React.ComponentType<IconProps>, label: string }) {
+function AppIcon({ mouseX, Icon, label, path }: { mouseX: MotionValue, Icon: React.ComponentType<IconProps>, label: string, path: string }) {
   let ref = useRef<HTMLDivElement>(null);
+  const navigate = useNavigate(); 
 
   let distance = useTransform(mouseX, (val) => {
     let bounds = ref.current?.getBoundingClientRect() ?? { x: 0, width: 0 };
@@ -33,7 +35,7 @@ function AppIcon({ mouseX, Icon, label }: { mouseX: MotionValue, Icon: React.Com
   let widthSync = useTransform(distance, [-100, 0, 100], [50, 80, 50]);
   let width = useSpring(widthSync, { mass: 0.1, stiffness: 100, damping: 12 });
 
-  let iconScaleSync = useTransform(distance, [-100, 0, 100], [1, 1.5, 1]);
+  let iconScaleSync = useTransform(distance, [-100, 0, 100], [1, 1.7, 1]);
   let iconScale = useSpring(iconScaleSync, { mass: 0.1, stiffness: 100, damping: 12 });
 
   return (
@@ -43,15 +45,16 @@ function AppIcon({ mouseX, Icon, label }: { mouseX: MotionValue, Icon: React.Com
           <motion.div
             ref={ref}
             style={{ width }}
-            className="aspect-square w-10 rounded-xl bg-white/20 shadow-md ring-1 ring-black/5 backdrop-blur-md flex items-center justify-center"
+            className="aspect-square w-10 rounded-lg bg-white/60 shadow-sm ring-1 ring-black/10 backdrop-blur-lg flex items-center justify-center cursor-pointer"
+            onClick={() => navigate(path)} 
           >
             <motion.div style={{ scale: iconScale }}>
-              <Icon className="w-5 h-5 text-gray-700" />
+              <Icon className="w-4 h-4 text-gray-700" />
             </motion.div>
           </motion.div>
         </TooltipTrigger>
         <TooltipContent>
-          <p>{label}</p>
+          <p className="">{label}</p>
         </TooltipContent>
       </Tooltip>
     </TooltipProvider>
@@ -62,13 +65,13 @@ function Menu() {
   let mouseX = useMotionValue(Infinity);
 
   const menuItems = [
-    { Icon: AiFillHome, label: "Home" },
-    { Icon: IoBriefcase, label: "Experiences" },
-    { Icon: IoLogoGithub, label: "Projects" },
-    { Icon: IoRocketSharp, label: "Journey" },
-    { Icon: IoStatsChart, label: "Stats" },
-    { Icon: IoDocumentSharp, label: "Blog" },
-    { Icon: BsTelephoneFill, label: "Contact" },
+    { Icon: AiFillHome, label: "Home", path: "/" },
+    { Icon: IoBriefcase, label: "Experiences", path: "/experiences" },
+    { Icon: IoLogoGithub, label: "Projects", path: "/projects" },
+    { Icon: IoRocketSharp, label: "Journey", path: "/journey" },
+    { Icon: BiStats, label: "Stats", path: "/stats" },
+    { Icon: IoDocument, label: "Blog", path: "/blog" },
+    { Icon: BsTelephoneFill, label: "Contact", path: "/contact" },
   ];
 
   return (
@@ -76,10 +79,10 @@ function Menu() {
       <motion.div
         onMouseMove={(e) => mouseX.set(e.pageX)}
         onMouseLeave={() => mouseX.set(Infinity)}
-        className="mx-auto h-16 flex items-end gap-2 rounded-xl bg-white/20 shadow-lg ring-1 ring-black/5 p-2 backdrop-blur-md"
+        className="mx-auto h-16 flex items-end gap-2 rounded-lg bg-white/20 shadow-lg ring-1 ring-black/10 p-2 backdrop-blur-sm"
       >
         {menuItems.map((item, i) => (
-          <AppIcon mouseX={mouseX} Icon={item.Icon} label={item.label} key={i} />
+          <AppIcon mouseX={mouseX} Icon={item.Icon} label={item.label} path={item.path} key={i} />
         ))}
       </motion.div>
     </div>
