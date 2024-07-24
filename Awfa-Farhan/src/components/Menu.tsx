@@ -33,6 +33,9 @@ function AppIcon({ mouseX, Icon, label }: { mouseX: MotionValue, Icon: React.Com
   let widthSync = useTransform(distance, [-100, 0, 100], [50, 80, 50]);
   let width = useSpring(widthSync, { mass: 0.1, stiffness: 100, damping: 12 });
 
+  let iconScaleSync = useTransform(distance, [-100, 0, 100], [1, 1.5, 1]);
+  let iconScale = useSpring(iconScaleSync, { mass: 0.1, stiffness: 100, damping: 12 });
+
   return (
     <TooltipProvider>
       <Tooltip>
@@ -42,7 +45,9 @@ function AppIcon({ mouseX, Icon, label }: { mouseX: MotionValue, Icon: React.Com
             style={{ width }}
             className="aspect-square w-10 rounded-xl bg-white/20 shadow-md ring-1 ring-black/5 backdrop-blur-md flex items-center justify-center"
           >
-            <Icon className="w-5 h-5 text-gray-700" />
+            <motion.div style={{ scale: iconScale }}>
+              <Icon className="w-5 h-5 text-gray-700" />
+            </motion.div>
           </motion.div>
         </TooltipTrigger>
         <TooltipContent>
