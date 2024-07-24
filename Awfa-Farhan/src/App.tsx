@@ -7,6 +7,7 @@ import Journey from '../src/pages/Journey';
 import Stats from '../src/pages/Stats'; 
 import Blog from '../src/pages/Blog'; 
 import Contact from '../src/pages/Contact'; 
+import Menu from '../src/components/Menu';  
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Route path="/Blog" element={<Blog />} />
         <Route path="/Contact" element={<Contact />} />
       </Routes>
+      <Menu />  
     </Router>
   );
 }

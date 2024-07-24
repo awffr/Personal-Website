@@ -5,7 +5,7 @@ import {
   useSpring,
   useTransform,
 } from "framer-motion";
-import { useRef } from "react";
+import { useRef, useEffect, useState } from "react";
 import { AiFillHome } from "react-icons/ai";
 import { IoBriefcase, IoLogoGithub, IoRocketSharp, IoDocument } from "react-icons/io5";
 import { BsTelephoneFill } from "react-icons/bs";
@@ -15,16 +15,16 @@ import {
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
-} from "@/components/ui/tooltip"; 
-import { useNavigate } from "react-router-dom"; 
+} from "@/components/ui/tooltip";
+import { useNavigate, useLocation } from "react-router-dom";
 
 type IconProps = {
   className?: string;
 };
 
-function AppIcon({ mouseX, Icon, label, path }: { mouseX: MotionValue, Icon: React.ComponentType<IconProps>, label: string, path: string }) {
+function AppIcon({ mouseX, Icon, label, path, delay, isAnimating }: { mouseX: MotionValue, Icon: React.ComponentType<IconProps>, label: string, path: string, delay: number, isAnimating: boolean }) {
   let ref = useRef<HTMLDivElement>(null);
-  const navigate = useNavigate(); 
+  const navigate = useNavigate();
 
   let distance = useTransform(mouseX, (val) => {
     let bounds = ref.current?.getBoundingClientRect() ?? { x: 0, width: 0 };
@@ -45,11 +45,14 @@ function AppIcon({ mouseX, Icon, label, path }: { mouseX: MotionValue, Icon: Rea
           <motion.div
             ref={ref}
             style={{ width }}
+            initial={{ opacity: 0, y: 50 }}
+            animate={isAnimating ? { opacity: 1, y: 0 } : { opacity: 1, y: 0 }}
+            transition={{ delay, duration: 0.5 }}
             className="aspect-square w-10 rounded-lg bg-white/60 shadow-sm ring-1 ring-black/10 backdrop-blur-lg flex items-center justify-center cursor-pointer"
-            onClick={() => navigate(path)} 
+            onClick={() => navigate(path)}
           >
             <motion.div style={{ scale: iconScale }}>
-              <Icon className="w-4 h-4 text-gray-700" />
+              <Icon className="w-4 h-4 text-zinc-600 hover:text-zinc-800" />
             </motion.div>
           </motion.div>
         </TooltipTrigger>
@@ -63,6 +66,13 @@ function AppIcon({ mouseX, Icon, label, path }: { mouseX: MotionValue, Icon: Rea
 
 function Menu() {
   let mouseX = useMotionValue(Infinity);
+  const location = useLocation();
+  const [hasAnimated, setHasAnimated] = useState(false);
+
+  useEffect(() => {
+    // Reset animation flag on location change
+    setHasAnimated(false);
+  }, [location]);
 
   const menuItems = [
     { Icon: AiFillHome, label: "Home", path: "/" },
@@ -75,14 +85,22 @@ function Menu() {
   ];
 
   return (
-    <div className="fixed bottom-6 left-1/2 transform -translate-x-1/2 flex justify-center w-full">
+    <div className="fixed bottom-6 left-1/2 transform -translate-x-1/2 flex justify-center">
       <motion.div
         onMouseMove={(e) => mouseX.set(e.pageX)}
         onMouseLeave={() => mouseX.set(Infinity)}
         className="mx-auto h-16 flex items-end gap-2 rounded-lg bg-white/20 shadow-lg ring-1 ring-black/10 p-2 backdrop-blur-sm"
       >
         {menuItems.map((item, i) => (
-          <AppIcon mouseX={mouseX} Icon={item.Icon} label={item.label} path={item.path} key={i} />
+          <AppIcon
+            key={i}
+            mouseX={mouseX}
+            Icon={item.Icon}
+            label={item.label}
+            path={item.path}
+            delay={hasAnimated ? 0 : i * 0.1} // Disable delay after initial animation
+            isAnimating={hasAnimated}
+          />
         ))}
       </motion.div>
     </div>
