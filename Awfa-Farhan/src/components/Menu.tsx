@@ -74,7 +74,7 @@ function Menu() {
   }, [location]);
 
   const menuItems = [
-    { Icon: AiFillHome, label: "Home", path: "/" },
+    { Icon: AiFillHome, label: "Home", path: "/home" },
     { Icon: IoBriefcase, label: "Experiences", path: "/experiences" },
     { Icon: IoLogoGithub, label: "Projects", path: "/projects" },
     { Icon: IoRocketSharp, label: "Journey", path: "/journey" },
