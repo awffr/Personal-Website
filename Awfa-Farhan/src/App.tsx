@@ -1,24 +1,25 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Home from '../src/pages/Home'; 
-import Experiences from '../src/pages/Experiences'; 
-import Projects from '../src/pages/Projects'; 
-import Journey from '../src/pages/Journey'; 
-import Stats from '../src/pages/Stats'; 
-import Blog from '../src/pages/Blog'; 
-import Contact from '../src/pages/Contact'; 
-import Menu from '../src/components/Menu';  
-import MenuWrapper from '../src/components/MenuWrapper';  
+import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
+import Welcome from './pages/Welcome'; 
+import Home from './pages/Home'; 
+import Experiences from './pages/Experiences'; 
+import Projects from './pages/Projects'; 
+import Journey from './pages/Journey'; 
+import Stats from './pages/Stats'; 
+import Blog from './pages/Blog'; 
+import Contact from './pages/Contact'; 
+import Menu from './components/Menu';  
+import MenuWrapper from './components/MenuWrapper';  
 
+const AppContent = () => {
+  const location = useLocation();
+  const isWelcomePage = location.pathname === '/';
 
-function App() {
   return (
-    <Router>
-      <MenuWrapper>
-        <Menu />  
-      </MenuWrapper>
+    <>
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Welcome />} />
+        <Route path="/Home" element={<Home />} />
         <Route path="/Experiences" element={<Experiences />} />
         <Route path="/Projects" element={<Projects />} />
         <Route path="/Journey" element={<Journey />} />
@@ -26,6 +27,19 @@ function App() {
         <Route path="/Blog" element={<Blog />} />
         <Route path="/Contact" element={<Contact />} />
       </Routes>
+      {!isWelcomePage && (
+        <MenuWrapper>
+          <Menu />  
+        </MenuWrapper>
+      )}
+    </>
+  );
+}
+
+function App() {
+  return (
+    <Router>
+      <AppContent />
     </Router>
   );
 }
