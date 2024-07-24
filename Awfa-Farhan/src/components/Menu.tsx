@@ -6,26 +6,22 @@ import {
   useTransform,
 } from "framer-motion";
 import { useRef } from "react";
+import { AiFillHome } from "react-icons/ai";
+import { IoBriefcase, IoLogoGithub, IoRocketSharp, IoStatsChart, IoDocumentSharp } from "react-icons/io5";
+import { BsTelephoneFill } from "react-icons/bs";
 
-function Menu() {
-  let mouseX = useMotionValue(Infinity);
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip"; 
 
-  return (
-    <div className="fixed bottom-6 left-1/2 transform -translate-x-1/2 flex justify-center w-full">
-      <motion.div
-        onMouseMove={(e) => mouseX.set(e.pageX)}
-        onMouseLeave={() => mouseX.set(Infinity)}
-        className="mx-auto flex h-14 items-end gap-4 rounded-xl bg-white/20 shadow-lg ring-1 ring-black/5 px-3 pb-2 backdrop-blur-md"
-      >
-        {[...Array(6).keys()].map((i) => (
-          <AppIcon mouseX={mouseX} key={i} />
-        ))}
-      </motion.div>
-    </div>
-  );
-}
+type IconProps = {
+  className?: string;
+};
 
-function AppIcon({ mouseX }: { mouseX: MotionValue }) {
+function AppIcon({ mouseX, Icon, label }: { mouseX: MotionValue, Icon: React.ComponentType<IconProps>, label: string }) {
   let ref = useRef<HTMLDivElement>(null);
 
   let distance = useTransform(mouseX, (val) => {
@@ -34,15 +30,54 @@ function AppIcon({ mouseX }: { mouseX: MotionValue }) {
     return val - bounds.x - bounds.width / 2;
   });
 
-  let widthSync = useTransform(distance, [-100, 0, 100], [40, 80, 40]);
+  let widthSync = useTransform(distance, [-100, 0, 100], [50, 80, 50]);
   let width = useSpring(widthSync, { mass: 0.1, stiffness: 100, damping: 12 });
 
   return (
-    <motion.div
-      ref={ref}
-      style={{ width }}
-      className="aspect-square w-10 rounded-xl bg-white/20 shadow-md ring-1 ring-black/5 backdrop-blur-md"
-    />
+    <TooltipProvider>
+      <Tooltip>
+        <TooltipTrigger>
+          <motion.div
+            ref={ref}
+            style={{ width }}
+            className="aspect-square w-10 rounded-xl bg-white/20 shadow-md ring-1 ring-black/5 backdrop-blur-md flex items-center justify-center"
+          >
+            <Icon className="w-5 h-5 text-gray-700" />
+          </motion.div>
+        </TooltipTrigger>
+        <TooltipContent>
+          <p>{label}</p>
+        </TooltipContent>
+      </Tooltip>
+    </TooltipProvider>
+  );
+}
+
+function Menu() {
+  let mouseX = useMotionValue(Infinity);
+
+  const menuItems = [
+    { Icon: AiFillHome, label: "Home" },
+    { Icon: IoBriefcase, label: "Experiences" },
+    { Icon: IoLogoGithub, label: "Projects" },
+    { Icon: IoRocketSharp, label: "Journey" },
+    { Icon: IoStatsChart, label: "Stats" },
+    { Icon: IoDocumentSharp, label: "Blog" },
+    { Icon: BsTelephoneFill, label: "Contact" },
+  ];
+
+  return (
+    <div className="fixed bottom-6 left-1/2 transform -translate-x-1/2 flex justify-center w-full">
+      <motion.div
+        onMouseMove={(e) => mouseX.set(e.pageX)}
+        onMouseLeave={() => mouseX.set(Infinity)}
+        className="mx-auto h-16 flex items-end gap-2 rounded-xl bg-white/20 shadow-lg ring-1 ring-black/5 p-2 backdrop-blur-md"
+      >
+        {menuItems.map((item, i) => (
+          <AppIcon mouseX={mouseX} Icon={item.Icon} label={item.label} key={i} />
+        ))}
+      </motion.div>
+    </div>
   );
 }
 
