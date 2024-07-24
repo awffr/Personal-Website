@@ -48,7 +48,7 @@ function AppIcon({ mouseX, Icon, label, path, delay, isAnimating }: { mouseX: Mo
             initial={{ opacity: 0, y: 50 }}
             animate={isAnimating ? { opacity: 1, y: 0 } : { opacity: 1, y: 0 }}
             transition={{ delay, duration: 0.6 }}
-            className="aspect-square w-10 rounded-lg bg-white/60 shadow-sm ring-1 ring-black/10 backdrop-blur-lg flex items-center justify-center cursor-pointer"
+            className="aspect-square w-10 rounded-md bg-white/60 shadow-sm ring-1 ring-black/10 backdrop-blur-lg flex items-center justify-center cursor-pointer"
             onClick={() => navigate(path)}
           >
             <motion.div style={{ scale: iconScale }}>
@@ -88,7 +88,7 @@ function Menu() {
       <motion.div
         onMouseMove={(e) => mouseX.set(e.pageX)}
         onMouseLeave={() => mouseX.set(Infinity)}
-        className="mx-auto h-16 flex items-end gap-2 rounded-lg bg-white/20 shadow-lg ring-1 ring-black/10 p-2 backdrop-blur-sm"
+        className="mx-auto h-16 flex items-end gap-2 rounded-md bg-white/20 shadow-md ring-1 ring-black/10 p-2 backdrop-blur-sm"
       >
         {menuItems.map((item, i) => (
           <AppIcon
@@ -97,7 +97,7 @@ function Menu() {
             Icon={item.Icon}
             label={item.label}
             path={item.path}
-            delay={hasAnimated ? 0 : i * 0.1} // Disable delay after initial animation
+            delay={hasAnimated ? 0 : i * 0.1}
             isAnimating={hasAnimated}
           />
         ))}
