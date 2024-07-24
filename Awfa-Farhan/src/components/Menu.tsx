@@ -47,7 +47,7 @@ function AppIcon({ mouseX, Icon, label, path, delay, isAnimating }: { mouseX: Mo
             style={{ width }}
             initial={{ opacity: 0, y: 50 }}
             animate={isAnimating ? { opacity: 1, y: 0 } : { opacity: 1, y: 0 }}
-            transition={{ delay, duration: 0.5 }}
+            transition={{ delay, duration: 0.6 }}
             className="aspect-square w-10 rounded-lg bg-white/60 shadow-sm ring-1 ring-black/10 backdrop-blur-lg flex items-center justify-center cursor-pointer"
             onClick={() => navigate(path)}
           >
@@ -70,7 +70,6 @@ function Menu() {
   const [hasAnimated, setHasAnimated] = useState(false);
 
   useEffect(() => {
-    // Reset animation flag on location change
     setHasAnimated(false);
   }, [location]);
 

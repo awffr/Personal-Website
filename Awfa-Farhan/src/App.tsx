@@ -8,10 +8,15 @@ import Stats from '../src/pages/Stats';
 import Blog from '../src/pages/Blog'; 
 import Contact from '../src/pages/Contact'; 
 import Menu from '../src/components/Menu';  
+import MenuWrapper from '../src/components/MenuWrapper';  
+
 
 function App() {
   return (
     <Router>
+      <MenuWrapper>
+        <Menu />  
+      </MenuWrapper>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/Experiences" element={<Experiences />} />
@@ -21,7 +26,6 @@ function App() {
         <Route path="/Blog" element={<Blog />} />
         <Route path="/Contact" element={<Contact />} />
       </Routes>
-      <Menu />  
     </Router>
   );
 }
