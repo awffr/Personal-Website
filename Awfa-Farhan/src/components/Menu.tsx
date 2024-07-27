@@ -6,8 +6,7 @@ import {
   useTransform,
 } from "framer-motion";
 import { useRef, useEffect, useState } from "react";
-import { AiFillHome } from "react-icons/ai";
-import { IoBriefcase, IoLogoGithub, IoRocketSharp, IoDocument } from "react-icons/io5";
+import { IoPersonSharp, IoBriefcase, IoLogoGithub, IoRocketSharp, IoDocument } from "react-icons/io5";
 import { BsTelephoneFill } from "react-icons/bs";
 import { BiStats } from "react-icons/bi";
 import {
@@ -52,7 +51,7 @@ function AppIcon({ mouseX, Icon, label, path, delay, isAnimating }: { mouseX: Mo
             onClick={() => navigate(path)}
           >
             <motion.div style={{ scale: iconScale }}>
-              <Icon className="w-4 h-4 text-zinc-600 hover:text-zinc-800" />
+              <Icon className="w-4 h-4 text-zinc-700 hover:text-zinc-400" />
             </motion.div>
           </motion.div>
         </TooltipTrigger>
@@ -74,7 +73,7 @@ function Menu() {
   }, [location]);
 
   const menuItems = [
-    { Icon: AiFillHome, label: "Home", path: "/home" },
+    { Icon: IoPersonSharp, label: "About", path: "/about" },
     { Icon: IoBriefcase, label: "Experiences", path: "/experiences" },
     { Icon: IoLogoGithub, label: "Projects", path: "/projects" },
     { Icon: IoRocketSharp, label: "Journey", path: "/journey" },
@@ -95,7 +94,7 @@ function Menu() {
             key={i}
             mouseX={mouseX}
             Icon={item.Icon}
-            label={item.label}
+            label={item.label}  
             path={item.path}
             delay={hasAnimated ? 0 : i * 0.1}
             isAnimating={hasAnimated}
