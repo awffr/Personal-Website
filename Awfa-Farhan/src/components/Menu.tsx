@@ -6,7 +6,13 @@ import {
   useTransform,
 } from "framer-motion";
 import { useRef, useEffect, useState } from "react";
-import { IoPersonSharp, IoBriefcase, IoLogoGithub, IoRocketSharp, IoDocument } from "react-icons/io5";
+import {
+  IoPersonSharp,
+  IoBriefcase,
+  IoLogoGithub,
+  IoRocketSharp,
+  IoDocument,
+} from "react-icons/io5";
 import { BsTelephoneFill } from "react-icons/bs";
 import { BiStats } from "react-icons/bi";
 import {
@@ -21,7 +27,21 @@ type IconProps = {
   className?: string;
 };
 
-function AppIcon({ mouseX, Icon, label, path, delay, isAnimating }: { mouseX: MotionValue, Icon: React.ComponentType<IconProps>, label: string, path: string, delay: number, isAnimating: boolean }) {
+function AppIcon({
+  mouseX,
+  Icon,
+  label,
+  path,
+  delay,
+  isAnimating,
+}: {
+  mouseX: MotionValue;
+  Icon: React.ComponentType<IconProps>;
+  label: string;
+  path: string;
+  delay: number;
+  isAnimating: boolean;
+}) {
   let ref = useRef<HTMLDivElement>(null);
   const navigate = useNavigate();
 
@@ -47,16 +67,16 @@ function AppIcon({ mouseX, Icon, label, path, delay, isAnimating }: { mouseX: Mo
             initial={{ opacity: 0, y: 50 }}
             animate={isAnimating ? { opacity: 1, y: 0 } : { opacity: 1, y: 0 }}
             transition={{ delay, duration: 0.6 }}
-            className="aspect-square w-10 rounded-md bg-white/60 shadow-sm ring-1 ring-black/10 backdrop-blur-lg flex items-center justify-center cursor-pointer"
+            className="aspect-square w-10 rounded-md bg-[#1A1A1A]/80 shadow-lg ring-1 ring-black/20 backdrop-blur-lg flex items-center justify-center cursor-pointer"
             onClick={() => navigate(path)}
           >
             <motion.div style={{ scale: iconScale }}>
-              <Icon className="w-4 h-4 text-zinc-700 hover:text-zinc-400" />
+              <Icon className="w-4 h-4 text-gray-300 hover:text-white" />
             </motion.div>
           </motion.div>
         </TooltipTrigger>
         <TooltipContent>
-          <p className="">{label}</p>
+          <p className="text-white">{label}</p>
         </TooltipContent>
       </Tooltip>
     </TooltipProvider>
@@ -87,14 +107,14 @@ function Menu() {
       <motion.div
         onMouseMove={(e) => mouseX.set(e.pageX)}
         onMouseLeave={() => mouseX.set(Infinity)}
-        className="mx-auto h-16 flex items-end gap-2 rounded-md bg-white/20 shadow-md ring-1 ring-black/10 p-2 backdrop-blur-sm"
+        className="mx-auto h-16 flex items-end gap-2 rounded-md bg-[#0A0A0A]/70 shadow-xl ring-1 ring-white/10 p-2 backdrop-blur-md"
       >
         {menuItems.map((item, i) => (
           <AppIcon
             key={i}
             mouseX={mouseX}
             Icon={item.Icon}
-            label={item.label}  
+            label={item.label}
             path={item.path}
             delay={hasAnimated ? 0 : i * 0.1}
             isAnimating={hasAnimated}
