@@ -7,7 +7,6 @@ import {
 } from "framer-motion";
 import { useRef, useEffect, useState } from "react";
 import {
-  IoPersonSharp,
   IoBriefcase,
   IoLogoGithub,
   IoRocketSharp,
@@ -21,8 +20,8 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 import { useNavigate, useLocation } from "react-router-dom";
-import { BsTelephoneFill } from "react-icons/bs";
 import { AiFillHome } from "react-icons/ai";
+// import { BsTelephoneFill } from "react-icons/bs";
 
 type IconProps = {
   className?: string;
