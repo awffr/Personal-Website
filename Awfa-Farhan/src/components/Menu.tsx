@@ -13,7 +13,6 @@ import {
   IoRocketSharp,
   IoDocument,
 } from "react-icons/io5";
-import { BsTelephoneFill } from "react-icons/bs";
 import { BiStats } from "react-icons/bi";
 import {
   Tooltip,
@@ -22,6 +21,8 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 import { useNavigate, useLocation } from "react-router-dom";
+import { BsTelephoneFill } from "react-icons/bs";
+import { AiFillHome } from "react-icons/ai";
 
 type IconProps = {
   className?: string;
@@ -93,13 +94,13 @@ function Menu() {
   }, [location]);
 
   const menuItems = [
-    { Icon: IoPersonSharp, label: "About", path: "/about" },
+    { Icon: AiFillHome, label: "Home", path: "/home" },
     { Icon: IoBriefcase, label: "Experiences", path: "/experiences" },
     { Icon: IoLogoGithub, label: "Projects", path: "/projects" },
     { Icon: IoRocketSharp, label: "Journey", path: "/journey" },
     { Icon: BiStats, label: "Stats", path: "/stats" },
     { Icon: IoDocument, label: "Blog", path: "/blog" },
-    { Icon: BsTelephoneFill, label: "Contact", path: "/contact" },
+    // { Icon: BsTelephoneFill, label: "Contact", path: "/contact" },
   ];
 
   return (
