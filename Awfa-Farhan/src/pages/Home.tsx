@@ -217,7 +217,7 @@ const Home: React.FC = () => {
       
 
       
-      <section id="interests" className='mb-72 mx-[100px] z-10'>
+      <section id="interests" className='mb-32 mx-[100px] z-10'>
         <div id="text-content" className='mb-20 font-inter text-center'>
           <h2 className="font-semibold text-[24px] text-white">
             .interests( )
@@ -236,7 +236,7 @@ const Home: React.FC = () => {
         className="absolute rounded-full h-[1380px] w-[560px] z-0"
         style={{
           top: '100vh',
-          transform: 'translateY(3100px) translateX(-200px) rotate(215deg)',
+          transform: 'translateY(3000px) translateX(-100px) rotate(215deg)',
           background: 'radial-gradient(58.54% 68.72% at 55.02% 31.46%, hsla(0, 0%, 45%, 0.08) 0%, hsla(0, 0%, 55%, 0.02) 50%, hsla(0, 0%, 45%, 0) 80%)'
         }}
       ></div>
