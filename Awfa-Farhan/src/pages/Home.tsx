@@ -32,28 +32,30 @@ const Home: React.FC = () => {
   ];
 
   return (
-    <div className="bg-[#08090A] min-h-screen flex flex-col relative overflow-hidden">  
-
-
+    <div className="bg-[#08090A] flex flex-col relative overflow-clip">  
       {/* Header Section */}
-      <header className="flex mt-8 mx-[100px] max-w-md text-white">
-        <div className="p-2 font-bold text-4xl"
-          style={{
-            fontFamily: 'Century Schoolbook, serif',
-            border: '0.4px solid white',
-          }}>
-          AF
+      <header className="sticky top-0 bg-transparent w-full p-2 backdrop-blur-xl z-50 border-b border-[#171717]">
+        <div className="flex mx-[100px] max-w-md text-white">
+          <div className="p-2 font-bold text-xl"
+            style={{
+              fontFamily: 'Century Schoolbook, serif',
+              border: '0.4px solid white',
+            }}>
+            AF
+          </div>
+          <p className="ml-20 text-sm leading-6"
+            style={{
+              fontFamily: 'IBM Plex Mono, monospace',
+            }}>
+            Hi fellas, welcome to my personal website! (´• ω •`)ﾉ 
+          </p>
         </div>
-        <p className="ml-20 text-sm leading-7"
-          style={{
-            fontFamily: 'IBM Plex Mono, monospace',
-          }}>
-          Hi fellas, welcome to my personal website! (´• ω •`)ﾉ 
-        </p>
       </header>
 
+      
+
       {/* Hero Section */}
-      <section id="hero" className="mt-12 mx-[100px] text-white flex justify-between">
+      <section id="hero" className="mt-8 mx-[100px] text-white flex justify-between">
         {heroImages.map((imageNumber) => (
           <img
             key={imageNumber}

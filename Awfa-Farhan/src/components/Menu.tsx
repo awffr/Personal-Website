@@ -103,7 +103,7 @@ function Menu() {
   ];
 
   return (
-    <div className="fixed bottom-6 left-1/2 transform -translate-x-1/2 flex justify-center">
+    <div className="fixed bottom-4 left-1/2 transform -translate-x-1/2 flex justify-center">
       <motion.div
         onMouseMove={(e) => mouseX.set(e.pageX)}
         onMouseLeave={() => mouseX.set(Infinity)}
