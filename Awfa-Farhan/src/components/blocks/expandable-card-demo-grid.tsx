@@ -106,7 +106,7 @@ export default function ExpandableCardDemo() {
             layoutId={`card-${card.title}-${id}`}
             key={card.title}
             onClick={() => handleCardClick(card)}
-            className="p-10 flex flex-col bg-black hover:bg-[#0e0e0e] border border-[#111111] rounded-xl ursor-pointer hover:shadow-3xl"
+            className="col-span-1 p-10 flex flex-col bg-black hover:bg-[#0e0e0e] border border-[#111111] rounded-xl cursor-pointer hover:shadow-3xl"
           >
             <div className="flex gap-4 flex-col w-full">
               <motion.div layoutId={`image-${card.title}-${id}`}>
@@ -121,13 +121,13 @@ export default function ExpandableCardDemo() {
               <div className="mt-6 flex justify-center flex-col">
                 <motion.h3
                   layoutId={`title-${card.title}-${id}`}
-                  className="font-medium text-neutral-300 text-center md:text-left text-[18px]"
+                  className="font-medium text-neutral-300 text-center md:text-left text-base"
                 >
                   {card.title}
                 </motion.h3>
                 <motion.p
                   layoutId={`description-${card.description}-${id}`}
-                  className="text-neutral-600 text-center md:text-left text-base mt-3"
+                  className="text-neutral-600 text-center md:text-left leading-7 text-[14px] mt-3"
                 >
                   {card.description}
                 </motion.p>
