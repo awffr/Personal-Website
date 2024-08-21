@@ -23,8 +23,9 @@ const Home: React.FC = () => {
     { id: 5, name: 'LateX', imageSrc:'/logo-latex.svg' },
     { id: 6, name: 'React', imageSrc:'/logo-react.svg' },
     { id: 7, name: 'AWS', imageSrc:'/logo-aws.svg' },
-    { id: 8, name: 'Python', imageSrc:'/logo-html.svg' },
+    { id: 8, name: 'Python', imageSrc:'/logo-python.svg' },
     { id: 9, name: 'R Language', imageSrc:'/logo-r.svg' },
+    { id: 10, name: 'Github', imageSrc:'/logo-github.svg' },
   ];
 
   return (
