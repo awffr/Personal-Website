@@ -1,7 +1,7 @@
-import React from 'react';
+// import React from 'react';
 import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
 import Welcome from './pages/Welcome'; 
-import About from './pages/About'; 
+import Home from './pages/Home'; 
 import Experiences from './pages/Experiences'; 
 import Projects from './pages/Projects'; 
 import Journey from './pages/Journey'; 
@@ -19,7 +19,7 @@ const AppContent = () => {
     <>
       <Routes>
         <Route path="/" element={<Welcome />} />
-        <Route path="/About" element={<About />} />
+        <Route path="/Home" element={<Home />} />
         <Route path="/Experiences" element={<Experiences />} />
         <Route path="/Projects" element={<Projects />} />
         <Route path="/Journey" element={<Journey />} />
