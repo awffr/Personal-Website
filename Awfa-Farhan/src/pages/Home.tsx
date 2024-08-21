@@ -1,6 +1,7 @@
 import React from 'react';
 
 const Home: React.FC = () => {
+
   const heroImages = [1, 2, 3];
   
   const projects = [
@@ -65,7 +66,7 @@ const Home: React.FC = () => {
         style={{
           top: '100vh',
           transform: 'translateY(-350px) rotate(-45deg)',
-          background: 'radial-gradient(68.54% 68.72% at 55.02% 31.46%, #D9D9D914/0, #8C8C8C05/50, #73737300/80)',
+          background: 'radial-gradient(68.54% 68.72% at 55.02% 31.46%, hsla(0, 0%, 85%, 0.08) 0%, hsla(0, 0%, 55%, 0.02) 50%, hsla(0, 0%, 45%, 0) 80%)'
         }}
       ></div>
       
