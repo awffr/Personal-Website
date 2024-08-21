@@ -1,4 +1,6 @@
 import React from 'react';
+import { motion } from "framer-motion";
+import { LampContainer } from "../components/ui/lamp";
 
 const Home: React.FC = () => {
 
@@ -31,6 +33,8 @@ const Home: React.FC = () => {
 
   return (
     <div className="bg-[#08090A] min-h-screen flex flex-col relative overflow-hidden">  
+
+
       {/* Header Section */}
       <header className="flex mt-8 mx-[100px] max-w-md text-white">
         <div className="p-2 font-bold text-4xl"
@@ -132,6 +136,7 @@ const Home: React.FC = () => {
         </div>
       </section>
 
+      
 
       <section id="project" className='mx-[100px] '>
         <div id="text-content" className='mt-48 font-inter text-end'>
@@ -185,29 +190,31 @@ const Home: React.FC = () => {
 
       </section>
 
-
-      <section id="skills" className='mb-60 mx-[100px] '>
-        <div id="text-content" className='my-48 font-inter text-center'>
-          <h2 className="font-semibold text-[24px] text-white">
-            .skills( )
-          </h2>
-          <p className="font-regular text-base leading-10 text-[#959595] mt-3">
-            Navigating the landscape of proficiency and potential       
-          </p>
-        </div>
-
-        <div className="mx-48 flex flex-wrap justify-around">
-          {skills.map(({ id, name, imageSrc }) => (
-            <img 
-              key={id}
-              src={imageSrc} 
-              alt={`Project Image ${name}`}
-              className="w-1/5 h-24 transform transition-transform duration-500 mb-40"
-            />
-          ))}
-        </div>
-      </section>
-
+      
+        <section id="skills" className='mt-16 mx-[100px] relative '>
+        <LampContainer>
+          <div id="text-content" className='pb-44 font-inter text-center'>
+            <h2 className="font-semibold text-[24px] text-white">
+              .skills( )
+            </h2>
+            <p className="font-regular text-base leading-10 text-[#959595] mt-3">
+              Navigating the landscape of proficiency and potential       
+            </p>
+          </div>
+          
+          <div className="mx-48 flex flex-wrap justify-around">
+            {skills.map(({ id, name, imageSrc }) => (
+              <img 
+                key={id}
+                src={imageSrc} 
+                alt={`Project Image ${name}`}
+                className="w-1/5 h-20 transform transition-transform duration-500 mb-32"
+              />
+            ))}
+          </div>
+          </LampContainer>
+        </section>
+      
 
       <section id="interests" className='mb-72 mx-[100px] '>
         <div id="text-content" className='mb-48 font-inter text-center'>
@@ -219,16 +226,7 @@ const Home: React.FC = () => {
           </p>
         </div>
 
-        <div className="mx-48 flex flex-wrap justify-around">
-          {skills.map(({ id, name, imageSrc }) => (
-            <img 
-              key={id}
-              src={imageSrc} 
-              alt={`Project Image ${name}`}
-              className="w-1/5 h-24 transform transition-transform duration-500 mb-40"
-            />
-          ))}
-        </div>
+        {/* Card */}
       </section>
 
 
