@@ -10,7 +10,7 @@ const Home: React.FC = () => {
   ];
 
   const principles = [
-    { id: 1, name: 'Desire', description:'A deep passion for continuous learning and embrace starting from the bottom.', icon:'/principle-icon-learn.svg' },
+    { id: 1, name: 'Driven', description:'A deep passion for continuous learning and embrace starting from the bottom.', icon:'/principle-icon-learn.svg' },
     { id: 2, name: 'Teamwork & Leadership', description:'Collaborative approach in managing and guiding teams effectively.', icon:'/principle-icon-leadership.svg'},
     { id: 3, name: 'Adaptive', description:'Swift learning allows me to navigate  challenges and achieve excellent results. ', icon:'/principle-icon-adaptive.svg'},
   ];
@@ -29,26 +29,25 @@ const Home: React.FC = () => {
   ];
 
   return (
-    <div className="bg-[#08090A] min-h-screen flex flex-col">
+    <div className="bg-[#08090A] min-h-screen flex flex-col relative overflow-hidden">  
+      {/* Header Section */}
       <header className="flex mt-8 mx-[100px] max-w-md text-white">
-        <div
-          className="p-2 font-bold text-4xl"
+        <div className="p-2 font-bold text-4xl"
           style={{
             fontFamily: 'Century Schoolbook, serif',
             border: '0.4px solid white',
-          }}
-        >
+          }}>
           AF
         </div>
         <p className="ml-20 text-sm leading-7"
           style={{
             fontFamily: 'IBM Plex Mono, monospace',
-          }}
-        >
+          }}>
           Hi fellas, welcome to my personal website! (´• ω •`)ﾉ 
         </p>
       </header>
 
+      {/* Hero Section */}
       <section id="hero" className="mt-12 mx-[100px] text-white flex justify-between">
         {heroImages.map((imageNumber) => (
           <img
@@ -60,7 +59,18 @@ const Home: React.FC = () => {
         ))}
       </section>
 
-      <section id="about" className="mt-40 mx-[100px] h-screen flex flex-col justify-center">
+      {/* Ambient Light */}
+      <div 
+        className="absolute rounded-full h-[1380px] w-[560px]"
+        style={{
+          top: '100vh',
+          transform: 'translateY(-350px) rotate(-45deg)',
+          background: 'radial-gradient(68.54% 68.72% at 55.02% 31.46%, #D9D9D914/0, #8C8C8C05/50, #73737300/80)',
+        }}
+      ></div>
+      
+      {/* About Section */}
+      <section id="about" className="mt-40 mx-[100px] h-screen flex flex-col justify-center relative overflow-hidden">
         <h1 className="font-bold text-7xl text-white">Awfa Farhan</h1>
         <h2 className="mt-3 text-xl text-[#CECECE]">
           Upcoming Medco Energi Business Apprentice - Digital Information and Technology
@@ -82,7 +92,7 @@ const Home: React.FC = () => {
             </p>
 
 
-            {/* button */}
+            {/* buttons */}
             <div className="mt-24">
               <button className="font-semibold text-[15px] bg-white hover:bg-gray-200 text-[#1F1F1F] text-justify py-3 px-12 mr-12 rounded-lg">
                 Resume
@@ -175,13 +185,36 @@ const Home: React.FC = () => {
       </section>
 
 
-      <section id="skills" className='mb-72 mx-[100px] '>
+      <section id="skills" className='mb-60 mx-[100px] '>
         <div id="text-content" className='my-48 font-inter text-center'>
           <h2 className="font-semibold text-[24px] text-white">
             .skills( )
           </h2>
           <p className="font-regular text-base leading-10 text-[#959595] mt-3">
             Navigating the landscape of proficiency and potential       
+          </p>
+        </div>
+
+        <div className="mx-48 flex flex-wrap justify-around">
+          {skills.map(({ id, name, imageSrc }) => (
+            <img 
+              key={id}
+              src={imageSrc} 
+              alt={`Project Image ${name}`}
+              className="w-1/5 h-24 transform transition-transform duration-500 mb-40"
+            />
+          ))}
+        </div>
+      </section>
+
+
+      <section id="interests" className='mb-72 mx-[100px] '>
+        <div id="text-content" className='mb-48 font-inter text-center'>
+          <h2 className="font-semibold text-[24px] text-white">
+            .interests( )
+          </h2>
+          <p className="font-regular text-base leading-10 text-[#959595] mt-3">
+            Venturing across the spectrum of digital innovation: mastering the art and science of technology  
           </p>
         </div>
 
