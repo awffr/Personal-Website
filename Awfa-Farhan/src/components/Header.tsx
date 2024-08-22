@@ -3,7 +3,7 @@ import React from 'react';
 export default function Menu() {
   return (
     <header
-      className="sticky top-0 w-full p-2 backdrop-blur-md z-50 border-b border-[#939393]/20"
+      className="sticky top-0 w-full p-2 backdrop-blur-md z-50 border-b border-[#939393]/20 z-10"
       style={{
         backgroundImage: 'linear-gradient(to bottom, rgba(8, 9, 10, 0.6), rgba(8, 9, 10, 0.3))',
         transition: 'background-color 0.3s ease', // Optional: Smooth transition if needed

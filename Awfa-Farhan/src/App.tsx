@@ -8,6 +8,8 @@ import Journey from './pages/Journey';
 import Stats from './pages/Stats'; 
 import Blog from './pages/Blog'; 
 import Contact from './pages/Contact'; 
+import Construction from './pages/Construction'; 
+
 import Menu from './components/Menu';  
 import MenuWrapper from './components/MenuWrapper';  
 
@@ -26,6 +28,7 @@ const AppContent = () => {
         <Route path="/Stats" element={<Stats />} />
         <Route path="/Blog" element={<Blog />} />
         <Route path="/Contact" element={<Contact />} />
+        <Route path="/Construction" element={<Construction />} />
       </Routes>
       {!isWelcomePage && (
         <MenuWrapper>
