@@ -1,4 +1,5 @@
 // import React from 'react';
+import { Link } from 'react-router-dom';
 
 export default function Menu() {
   return (
@@ -10,16 +11,16 @@ export default function Menu() {
       }}
     >
       <div className="flex mx-[100px] justify-between text-white">
-        <a
-          className="p-2 m-1 font-bold text-xl hover:cursor-pointer hover:bg-[#939393]/40"
-          href='/home'
-          style={{
-            fontFamily: 'Century Schoolbook, serif',
-            border: '0.4px solid white',
-          }}
-        >
-          AF
-        </a>
+      <Link
+        className="p-2 m-1 font-bold text-xl hover:cursor-pointer hover:bg-[#939393]/40"
+        to="/home"  // Use "to" instead of "href"
+        style={{
+          fontFamily: 'Century Schoolbook, serif',
+          border: '0.4px solid white',
+        }}
+      >
+        AF
+      </Link>
         <p
           className="m-1 text-sm max-w-xs text-end leading-6"
           style={{
