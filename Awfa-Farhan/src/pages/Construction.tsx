@@ -28,7 +28,7 @@ export function Construction() {
           alt='Under Construction'
           className="w-1/6 h-1/6"
         />
-        <h2 className="mt-16 font-semibold text-lg text-[#CECECE] text-white">
+        <h2 className="mt-16 font-semibold text-lg text-white">
           Site Under Construction
         </h2>
         <p className="mt-6 font-regular text-sm leading-7 text-[#959595] text-center">
