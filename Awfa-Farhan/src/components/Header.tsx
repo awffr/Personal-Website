@@ -12,7 +12,7 @@ export default function Menu() {
       <div className="flex mx-[100px] justify-between text-white">
         <a
           className="p-2 m-1 font-bold text-xl hover:cursor-pointer hover:bg-[#939393]/40"
-          href='/Home'
+          href='/home'
           style={{
             fontFamily: 'Century Schoolbook, serif',
             border: '0.4px solid white',
