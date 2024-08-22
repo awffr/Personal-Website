@@ -5,7 +5,7 @@ const experiencesData = [
   {
     title: "Medco Business Apprentice - Digital Information & Technology",
     description:
-      "An Accelerated Development Program providing fresh graduates with opportunities to take part of filling out Company’s key positions. It integrates development approach of OJT, Coaching & Mentoring, and Targeted training. The Digital Information Technology functions includes:",
+      "An Accelerated Development Program from Medco Energi providing fresh graduates with opportunities to take part of filling out Company’s key positions. It integrates development approach of OJT, Coaching & Mentoring, and Targeted training. The Digital Information Technology functions includes:",
     extras: "",
       points: [
       "Digital Transformation",
