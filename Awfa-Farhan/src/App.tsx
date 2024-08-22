@@ -5,7 +5,6 @@
 // import Contact from './pages/Contact'; 
 
 import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
-import Welcome from './pages/Welcome'; 
 import Home from './pages/Home'; 
 import Experiences from './pages/Experiences'; 
 import Construction from './pages/Construction'; 
@@ -17,7 +16,7 @@ const AppContent = () => {
   return (
     <>
       <Routes>
-        <Route path="/" element={<Welcome />} />
+        <Route path="/" element={<Home />} />
         <Route path="/Home" element={<Home />} />
         <Route path="/Experiences" element={<Experiences />} />
         <Route path="/Projects" element={<Construction />} />
