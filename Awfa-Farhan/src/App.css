@@ -27,3 +27,29 @@
   scrollbar-width: thin; /* Makes the scrollbar thin */
   scrollbar-color: #333 #000; /* Thumb color and track color */
 }
+
+/* App.css */
+
+/* Transition container to ensure smooth transitions */
+.transition-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+/* Define the fade transition styles */
+.fade-enter {
+  opacity: 0;
+}
+.fade-enter-active {
+  opacity: 1;
+  transition: opacity 300ms ease-in-out;
+}
+.fade-exit {
+  opacity: 1;
+}
+.fade-exit-active {
+  opacity: 0;
+  transition: opacity 300ms ease-in-out;
+}
+

@@ -1,20 +1,26 @@
-// import Projects from './pages/Projects'; 
-// import Journey from './pages/Journey'; 
-// import Stats from './pages/Stats'; 
-// import Blog from './pages/Blog'; 
-// import Contact from './pages/Contact'; 
-
-import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
+import { useEffect } from 'react';
+import { BrowserRouter as Router, Route, Routes, Navigate, useLocation } from 'react-router-dom';
 import Home from './pages/Home'; 
 import Experiences from './pages/Experiences'; 
 import Construction from './pages/Construction'; 
 import Menu from './components/Menu';  
 import MenuWrapper from './components/MenuWrapper';  
 
-const AppContent = () => {
+// ScrollToTop component
+const ScrollToTop = () => {
+  const { pathname } = useLocation();
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
+};
+
+const AppContent = () => {
   return (
     <>
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/Home" element={<Home />} />
