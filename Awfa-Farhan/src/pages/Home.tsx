@@ -34,25 +34,33 @@ const Home: React.FC = () => {
   return (
     <div className="bg-[#08090A] flex flex-col relative overflow-clip">  
       {/* Header Section */}
-      <header className="sticky top-0 bg-transparent w-full p-2 backdrop-blur-xl z-50 border-b border-[#171717]">
-        <div className="flex mx-[100px] max-w-md text-white">
-          <div className="p-2 font-bold text-xl"
+      <header
+        className="sticky top-0 w-full p-2 backdrop-blur-2xl z-50 border-b border-[#939393]/20"
+        style={{
+          backgroundImage: 'linear-gradient(to bottom, rgba(8, 9, 10, 0.6), rgba(8, 9, 10, 0.3))',
+          transition: 'background-color 0.3s ease', // Optional: Smooth transition if needed
+        }}
+      >
+        <div className="flex mx-[100px] justify-between text-white">
+          <div
+            className="p-2 m-1 font-bold text-xl"
             style={{
               fontFamily: 'Century Schoolbook, serif',
               border: '0.4px solid white',
-            }}>
+            }}
+          >
             AF
           </div>
-          <p className="ml-20 text-sm leading-6"
+          <p
+            className="m-1 text-sm max-w-xs text-end leading-6"
             style={{
               fontFamily: 'IBM Plex Mono, monospace',
-            }}>
+            }}
+          >
             Hi fellas, welcome to my personal website! (´• ω •`)ﾉ 
           </p>
         </div>
       </header>
-
-      
 
       {/* Hero Section */}
       <section id="hero" className="mt-8 mx-[100px] text-white flex justify-between">
@@ -83,7 +91,7 @@ const Home: React.FC = () => {
           Upcoming Medco Energi Business Apprentice - Digital Information and Technology
         </h2>
 
-        <div id="text-content" className="mt-28 grid grid-cols-12 gap-12">
+        <div id="text-content" className="mt-20 grid grid-cols-12 gap-12">
           <div className="col-span-8">
             <h2 className="font-semibold text-[24px] text-white">.about( )</h2>
             <p className="font-regular text-base leading-10 text-[#8A8F98] mt-3 text-justify">
@@ -141,7 +149,7 @@ const Home: React.FC = () => {
       
 
       <section id="project" className='mx-[100px] '>
-        <div id="text-content" className='mt-48 font-inter text-end'>
+        <div id="text-content" className='mt-24 font-inter text-end'>
           <h2 className="font-semibold text-[24px] text-white">
             .projects( )
           </h2>
