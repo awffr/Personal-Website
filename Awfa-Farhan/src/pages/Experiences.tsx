@@ -1,60 +1,124 @@
 import { StickyScroll } from "../components/ui/sticky-scroll-reveal";
 
-const content = [
+const experiencesData = [
   {
-    title: "Collaborative Editing",
+    title: "Medco Business Apprentice - Digital Information & Technology",
     description:
-      "Work together in real time with your team, clients, and stakeholders. Collaborate on documents, share ideas, and make decisions quickly. With our platform, you can streamline your workflow and increase productivity.",
+      "An Accelerated Development Program providing fresh graduates with opportunities to take part of filling out Company’s key positions. It integrates development approach of OJT, Coaching & Mentoring, and Targeted training. The Digital Information Technology functions includes:",
+    extras: "",
+      points: [
+      "Digital Transformation",
+      "IT Business Application & Information Management",
+      "IT Strategy Architecture & Planning",
+      "Demand & Portfolio Management",
+      "IT Technical Application & Data Management",
+      "IT Infrastructure Management",
+    ],
+    location: "Jakarta, Indonesia",
+    date: "Sep 24 - Present",
     content: (
-      <div className="h-full w-full bg-[linear-gradient(to_bottom_right,var(--cyan-500),var(--emerald-500))] flex items-center justify-center text-white">
-        Collaborative Editing
-      </div>
+      <img src="/experience-logo-medco.svg" alt="Medco Logo" className="w-auto h-auto" />
     ),
   },
   {
-    title: "Real time changes",
+    title: "Cloud DevOps Engineer Intern",
     description:
-      "See changes as they happen. With our platform, you can track every modification in real time. No more confusion about the latest version of your project. Say goodbye to the chaos of version control and embrace the simplicity of real-time updates.",
+      "",
+    extras: "",
+    points: [
+      "Built and deployed cloud-based IT infrastructure given by the Solution Architect",
+      "Monitored deployed cloud-based instances performance ",
+      "Installed, configured, and maintained OS and apps on cloud servers",
+      "Constructed a checklist rundown related to building infrastructure in the cloud",
+      "Performed User Acceptance Testing and Load Testing",
+      "Implemented in respond to Request for Change (RFC) documents if needed",
+    ],
+    location: "Remote",
+    date: "Nov – Dec 22",
     content: (
-      <div className="h-full w-full  flex items-center justify-center text-white">
-        <img
-          src="/linear.webp"
-          width={300}
-          height={300}
-          className="h-full w-full object-cover"
-          alt="linear board demo"
-        />
-      </div>
+      <img src="/experience-logo-elitery.svg" alt="Elitery Logo" className="w-auto h-auto" />
     ),
   },
   {
-    title: "Version control",
+    title: "AWS Elite Cloud Engineer Bootcamp - DTS",
     description:
-      "Experience real-time updates and never stress about version control again. Our platform ensures that you're always working on the most recent version of your project, eliminating the need for constant manual updates. Stay in the loop, keep your team aligned, and maintain the flow of your work without any interruptions.",
+      "",
+    extras: "",    
+    points: [
+      "Performed simulations as a Solutions Architect, DevOps Engineer, and SRE",
+      "Assessed potential customer’s using Assessment form and Request for Proposal",
+      "Created solution in form of cloud architecture topology for potential customer",
+      "Created cloud infrastructure based on the created solutions",
+      "Performed User Acceptance Testing (UAT) and Load Testing",
+      "Monitored deployed infrastructure",
+      "Prepared and presented knowledge transfer", 
+      "Responded, reviewed, and fixed existing bugs or errors"
+    ],
+    location: "Jakarta, Indonesia",
+    date: "Aug - Oct 22",
     content: (
-      <div className="h-full w-full bg-[linear-gradient(to_bottom_right,var(--orange-500),var(--yellow-500))] flex items-center justify-center text-white">
-        Version control
-      </div>
+      <img src="/experience-logo-aws.svg" alt="AWS Logo" className="w-auto h-auto" />
     ),
   },
   {
-    title: "Running out of content",
+    title: "Universitas Gadjah Mada",
     description:
-      "Experience real-time updates and never stress about version control again. Our platform ensures that you're always working on the most recent version of your project, eliminating the need for constant manual updates. Stay in the loop, keep your team aligned, and maintain the flow of your work without any interruptions.",
+      "Bachelor of Computer Science, CGPA 3.98/4.00",
+    extras: "Relevant Coursework: Machine Learning, Calculus, Cloud Computing, UI/UX, Big Data Analytics, Web Development, Databases, Programming",
+    location: "Yogyakarta, Indonesia",
+    date: "Sep 20 - Jan 24",
     content: (
-      <div className="h-full w-full bg-[linear-gradient(to_bottom_right,var(--cyan-500),var(--emerald-500))] flex items-center justify-center text-white">
-        Running out of content
-      </div>
+      <img src="/experience-logo-ugm.svg" alt="UGM Logo" className="w-auto h-auto" />
     ),
   },
+  {
+    title: "University of Tokyo",
+    description:
+      "University-wide Student Exchange Program, CGPA 4.08/4.30",
+    extras: "Relevant Coursework:  Data Analytics, Macroeconomics, Energy Innovation & Policy",
+    location: "Tokyo, Japan",
+    date: "Apr - Aug 2023",
+    content: (
+      <img src="/experience-logo-utokyo.svg" alt="UTokyo Logo" className="w-auto h-auto" />
+    ),
+  },
+  
+  // Add more experience objects as needed
 ];
 
 export function Experiences() {
   return (
-    <div className="bg-[#08090A] min-h-screen flex flex-col relative overflow-clip">  
-      <h1>Welcome to the Experiences Page</h1>
-      <div className="p-10">
-        <StickyScroll content={content} />
+   <div className="bg-[#08090A] min-h-screen flex flex-col relative overflow-clip">
+      {/* Header Section */}
+      <header
+        className="sticky top-0 w-full p-2 backdrop-blur-md z-50 border-b border-[#939393]/20"
+        style={{
+          backgroundImage: 'linear-gradient(to bottom, rgba(8, 9, 10, 0.6), rgba(8, 9, 10, 0.3))',
+          transition: 'background-color 0.3s ease', // Optional: Smooth transition if needed
+        }}
+      >
+        <div className="flex mx-[100px] justify-between text-white">
+          <div
+            className="p-2 m-1 font-bold text-xl"
+            style={{
+              fontFamily: 'Century Schoolbook, serif',
+              border: '0.4px solid white',
+            }}
+          >
+            AF
+          </div>
+          <p
+            className="m-1 text-sm max-w-xs text-end leading-6"
+            style={{
+              fontFamily: 'IBM Plex Mono, monospace',
+            }}
+          >
+            Hi fellas, welcome to Awfa's personal website! (´• ω •`)ﾉ 
+          </p>
+        </div>
+      </header>
+      <div className="p-6">
+        <StickyScroll content={experiencesData} />
       </div>
     </div>
   );

@@ -35,7 +35,7 @@ const Home: React.FC = () => {
     <div className="bg-[#08090A] flex flex-col relative overflow-clip">  
       {/* Header Section */}
       <header
-        className="sticky top-0 w-full p-2 backdrop-blur-2xl z-50 border-b border-[#939393]/20"
+        className="sticky top-0 w-full p-2 backdrop-blur-md z-50 border-b border-[#939393]/20"
         style={{
           backgroundImage: 'linear-gradient(to bottom, rgba(8, 9, 10, 0.6), rgba(8, 9, 10, 0.3))',
           transition: 'background-color 0.3s ease', // Optional: Smooth transition if needed
@@ -57,7 +57,7 @@ const Home: React.FC = () => {
               fontFamily: 'IBM Plex Mono, monospace',
             }}
           >
-            Hi fellas, welcome to my personal website! (´• ω •`)ﾉ 
+            Hi fellas, welcome to Awfa's personal website! (´• ω •`)ﾉ 
           </p>
         </div>
       </header>
@@ -94,7 +94,7 @@ const Home: React.FC = () => {
         <div id="text-content" className="mt-20 grid grid-cols-12 gap-12">
           <div className="col-span-8">
             <h2 className="font-semibold text-[24px] text-white">.about( )</h2>
-            <p className="font-regular text-base leading-10 text-[#8A8F98] mt-3 text-justify">
+            <p className="font-regular text-base leading-10 text-[#959595] mt-3 text-justify">
               <span className="block">
                 As a Computer Science fresh graduate from Universitas Gadjah Mada, Awfa brings a quality-driven mindset and a dedication to continuous learning.
                 Delving into Machine Learning, Cloud Computing, and Data Analytics, he further enriched his knowledge through a student exchange program at the University of Tokyo.
@@ -137,7 +137,7 @@ const Home: React.FC = () => {
                       {name}
                   </h2>                
                 </div>
-                <p className="mt-3 mb-20 font-regular leading-8 text-[15px] text-[#8A8F98]">
+                <p className="mt-3 mb-20 font-regular leading-8 text-[15px] text-[#959595]">
                     {description}
                 </p>
               </div>
