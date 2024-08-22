@@ -25,8 +25,8 @@ export const StickyScroll = ({
 
   useMotionValueEvent(scrollY, "change", (latest) => {
     const viewportHeight = window.innerHeight;
-    const scrollPosition = latest / viewportHeight / 1.3;
-    const cardsBreakpoints = content.map((_, index) => index / cardLength * 2);
+    const scrollPosition = latest / viewportHeight / 1.35;
+    const cardsBreakpoints = content.map((_, index) => index / cardLength * 2.1);
     const closestBreakpointIndex = cardsBreakpoints.reduce(
       (acc, breakpoint, index) => {
         const distance = Math.abs(scrollPosition - breakpoint);
