@@ -1,3 +1,4 @@
+import Header from "../components/Header";
 import { StickyScroll } from "../components/ui/sticky-scroll-reveal";
 
 const experiencesData = [
@@ -82,41 +83,12 @@ const experiencesData = [
       <img src="/experience-logo-utokyo.svg" alt="UTokyo Logo" className="w-auto h-auto" />
     ),
   },
-  
-  // Add more experience objects as needed
 ];
 
 export function Experiences() {
   return (
    <div className="bg-[#08090A] min-h-screen flex flex-col relative overflow-clip">
-      {/* Header Section */}
-      <header
-        className="sticky top-0 w-full p-2 backdrop-blur-md z-50 border-b border-[#939393]/20"
-        style={{
-          backgroundImage: 'linear-gradient(to bottom, rgba(8, 9, 10, 0.6), rgba(8, 9, 10, 0.3))',
-          transition: 'background-color 0.3s ease', // Optional: Smooth transition if needed
-        }}
-      >
-        <div className="flex mx-[100px] justify-between text-white">
-          <div
-            className="p-2 m-1 font-bold text-xl"
-            style={{
-              fontFamily: 'Century Schoolbook, serif',
-              border: '0.4px solid white',
-            }}
-          >
-            AF
-          </div>
-          <p
-            className="m-1 text-sm max-w-xs text-end leading-6"
-            style={{
-              fontFamily: 'IBM Plex Mono, monospace',
-            }}
-          >
-            Hi fellas, welcome to Awfa's personal website! (´• ω •`)ﾉ 
-          </p>
-        </div>
-      </header>
+      <Header/>
       <div className="p-6">
         <StickyScroll content={experiencesData} />
       </div>
