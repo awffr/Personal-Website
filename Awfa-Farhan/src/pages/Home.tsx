@@ -1,4 +1,5 @@
 import React from 'react';
+import Header from "../components/Header";
 import { LampContainer } from "../components/ui/lamp";
 import ExpandableCardDemo from "../components/blocks/expandable-card-demo-grid"
 
@@ -34,25 +35,7 @@ const Home: React.FC = () => {
   return (
     <div className="bg-[#08090A] flex flex-col relative overflow-clip">  
       {/* Header Section */}
-      <header className="sticky top-0 bg-transparent w-full p-2 backdrop-blur-xl z-50 border-b border-[#171717]">
-        <div className="flex mx-[100px] max-w-md text-white">
-          <div className="p-2 font-bold text-xl"
-            style={{
-              fontFamily: 'Century Schoolbook, serif',
-              border: '0.4px solid white',
-            }}>
-            AF
-          </div>
-          <p className="ml-20 text-sm leading-6"
-            style={{
-              fontFamily: 'IBM Plex Mono, monospace',
-            }}>
-            Hi fellas, welcome to my personal website! (´• ω •`)ﾉ 
-          </p>
-        </div>
-      </header>
-
-      
+      <Header/>
 
       {/* Hero Section */}
       <section id="hero" className="mt-8 mx-[100px] text-white flex justify-between">
@@ -83,10 +66,10 @@ const Home: React.FC = () => {
           Upcoming Medco Energi Business Apprentice - Digital Information and Technology
         </h2>
 
-        <div id="text-content" className="mt-28 grid grid-cols-12 gap-12">
+        <div id="text-content" className="mt-20 grid grid-cols-12 gap-12">
           <div className="col-span-8">
             <h2 className="font-semibold text-[24px] text-white">.about( )</h2>
-            <p className="font-regular text-base leading-10 text-[#8A8F98] mt-3 text-justify">
+            <p className="font-regular text-base leading-10 text-[#959595] mt-3 text-justify">
               <span className="block">
                 As a Computer Science fresh graduate from Universitas Gadjah Mada, Awfa brings a quality-driven mindset and a dedication to continuous learning.
                 Delving into Machine Learning, Cloud Computing, and Data Analytics, he further enriched his knowledge through a student exchange program at the University of Tokyo.
@@ -129,7 +112,7 @@ const Home: React.FC = () => {
                       {name}
                   </h2>                
                 </div>
-                <p className="mt-3 mb-20 font-regular leading-8 text-[15px] text-[#8A8F98]">
+                <p className="mt-3 mb-20 font-regular leading-8 text-[15px] text-[#959595]">
                     {description}
                 </p>
               </div>
@@ -141,7 +124,7 @@ const Home: React.FC = () => {
       
 
       <section id="project" className='mx-[100px] '>
-        <div id="text-content" className='mt-48 font-inter text-end'>
+        <div id="text-content" className='mt-24 font-inter text-end'>
           <h2 className="font-semibold text-[24px] text-white">
             .projects( )
           </h2>

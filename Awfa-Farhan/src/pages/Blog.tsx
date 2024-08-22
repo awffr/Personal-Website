@@ -1,9 +1,9 @@
 import React from 'react';
 
-const Blog: React.FC = () => {
+export function Blog() {
   return (
-    <div>
-      <h1>Welcome to the Blog Page</h1>
+   <div className="bg-[#08090A] min-h-screen flex flex-col relative overflow-clip">
+     hi
     </div>
   );
 };
