@@ -96,8 +96,8 @@ function Menu() {
     { Icon: AiFillHome, label: "Home", path: "/home" },
     { Icon: IoBriefcase, label: "Experiences", path: "/experiences" },
     { Icon: IoLogoGithub, label: "Projects", path: "/projects" },
-    { Icon: IoRocketSharp, label: "Journey", path: "/journey" },
-    { Icon: BiStats, label: "Stats", path: "/stats" },
+    // { Icon: BiStats, label: "Journey", path: "/journey" },
+    { Icon: IoRocketSharp, label: "Stats", path: "/stats" },
     { Icon: IoDocument, label: "Blog", path: "/blog" },
     // { Icon: BsTelephoneFill, label: "Contact", path: "/contact" },
   ];
