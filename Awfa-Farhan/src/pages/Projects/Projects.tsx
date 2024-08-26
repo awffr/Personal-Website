@@ -1,5 +1,6 @@
-import Header from '../components/Header';
+import Header from '../../components/Header';
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Projects: React.FC = () => {
 
@@ -16,10 +17,7 @@ const Projects: React.FC = () => {
       <section id="project" className='mx-[100px] '>
         <div id="project-content" className="my-16 flex flex-col items-center gap-y-10">
           {projects.map(({ id, name, display, description, icon, color }) => (
-            <div
-              key={id}
-              className="w-[90%] p-2 bg-[#0D0D0D] text-white hover:cursor-pointer border border-zinc-800 rounded-xl relative overflow-hidden transition-colors duration-500"
-            >
+            <Link to={`/projects/${name}`} key={id} className="w-[90%] p-2 bg-[#0D0D0D] text-white hover:cursor-pointer border border-zinc-800 rounded-xl relative overflow-hidden transition-colors duration-500">
               <div className="my-5 flex px-12">
                 <img 
                   src={icon} 
@@ -47,7 +45,7 @@ const Projects: React.FC = () => {
                 className="absolute inset-0 opacity-0 hover:opacity-100 transition-opacity duration-600"
                 style={{ background: `linear-gradient(to top, ${color}20 10%, transparent)` }}
               ></div>
-            </div>
+            </Link>
           ))}
         </div>
       </section>
