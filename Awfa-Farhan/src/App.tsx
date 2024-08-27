@@ -5,7 +5,7 @@ import Experiences from './pages/Experiences';
 import Construction from './pages/Construction'; 
 import Stats from './pages/Stats'; 
 import Projects from './pages/Projects/Projects'; 
-import ProjectDetail from './pages/Projects/Keythicc/ProjectDetail';
+import ProjectDetail from './pages/Projects/keythicc/ProjectDetail';
 
 import Menu from './components/Menu';  
 import MenuWrapper from './components/MenuWrapper';  
